@@ -1,5 +1,5 @@
 class Shoes():
-    def __init__(self, price = 154, size = 9, color = 'Black', brand_model = 'AirJordan'):
+    def __init__(self, price = None, size = None, color = None, brand_model = None):
         self.__price = int(price)
         self.__size = size
         self.__color = color
@@ -31,7 +31,7 @@ class Shoes():
             f"price: {self.__price}\n"
             f"size: {self.__size}\n"
             f"color: {self.__color}\n"
-            f"textrue: {self.texture}\n"
+            f"texture: {self.texture}\n"
             f"sole_height: {self.sole_height}\n"            
         )
 
@@ -52,7 +52,7 @@ Nike = Shoes(150, 8, 'Black', 'AirJordan')
 Adidas = Shoes(100, 8, 'White', 'Campus')
 NewBalance = Shoes(80, 11, 'Red', 'Z-102')
 
-list = [
+list_of_shoes = [
     Shoes(150, 8, 'Black', 'AirJordan'),
     Shoes(100, 8, 'White', 'Campus'),
     Shoes(80, 7, 'Red', 'Z-102')
@@ -60,9 +60,9 @@ list = [
 
 def find_best_shoes():
 
-    best_shoe = list[0]
+    best_shoe = list_of_shoes[0]
     
-    for shoe in list:   
+    for shoe in list_of_shoes:   
         if (shoe.get_size() > best_shoe.get_size()) or ((shoe.get_size() == best_shoe.get_size()) and shoe.get_price() < best_shoe.get_price()):
             best_shoe = shoe
     return print(repr(best_shoe))
